@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Carousel from "./Carousel/index";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Redirect,
+  Route
+} from "react-router-dom";
 
-function App() {
+const App = () => {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/development-test">
+          <Carousel />
+        </Route>
+        <Redirect from="/" to="/development-test" />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
