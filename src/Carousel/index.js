@@ -5,10 +5,15 @@ import { useState, useEffect } from "react";
 import Image from "../Image/index";
 
 const Carousel = () => {
+// build a scalable custom hook for api calls
+// it also avoid messy code that reduce the code readability
   const { imgStates } = useImgApi();
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
+// a flag to decide what image to display
   const [isHideModal, setIsHideModal] = useState(true);
 
+// avoid hitting the non exsisting images based on image id from json data
+// make use of the side effect
   useEffect(() => {
     if (currentImgIndex < 0) {
       setCurrentImgIndex(imgStates.length - 2);

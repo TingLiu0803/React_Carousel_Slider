@@ -10,6 +10,7 @@ const Image = ({
   onWheel,
   isHideModal
 }) => {
+// take advantage of the ishideModal to keep the normal view of carousel sliders and poped out modal on the same url
   return isHideModal ? (
     <div className={index === item.id - 1 ? "slid active" : "slid"} onWheel={onWheel}>
       <h3>{item.alt}</h3>

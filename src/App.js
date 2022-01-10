@@ -7,11 +7,13 @@ import {
   Route
 } from "react-router-dom";
 
+// add lazy to speed up the loading
 const Carousel = lazy(() => import('./Carousel/index'));
 
 const App = () => {
 
   return (
+// use react router dom, so it will be easier for adding other routes
     <Router>
       <Switch>
         <Route path="/development-test">
