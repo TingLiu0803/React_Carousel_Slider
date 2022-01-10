@@ -15,7 +15,6 @@ const Image = ({
       <h3>{item.alt}</h3>
       <div className="img_container">
         <button className="left" name="left" onClick={onClick}>
-          {previous}
         </button>
         <img
           src={item.image}
@@ -25,7 +24,6 @@ const Image = ({
           name={item.id}
         />
         <button className="right" name="right" onClick={onClick}>
-          {next}
         </button>
       </div>
     </div>

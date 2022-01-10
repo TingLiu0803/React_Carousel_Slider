@@ -2,7 +2,6 @@ import "./styles.css";
 import { title } from "../shared/constants";
 import { useImgApi } from "../hooks/useImgApi";
 import { useState, useEffect } from "react";
-import { next, previous } from "../shared/constants";
 import Image from "../Image/index";
 
 const Carousel = () => {
@@ -43,9 +42,7 @@ const Carousel = () => {
             index={index}
             item={item}
             isHideModal={isHideModal}
-            previous={previous}
             handleDisplayModal={handleDisplayModal}
-            next={next}
             onClick={onClick}
             onWheel={onWheel}
           />
@@ -53,11 +50,11 @@ const Carousel = () => {
           ""
         )
       )}
-      <div className="dot_container">
+      {isHideModal ? <div className="dot_container">
         <span className="dot" name="left" onClick={onClick}></span>
         <span className="dot" name="middle"></span>
         <span className="dot" name="right" onClick={onClick}></span>
-      </div>
+      </div> : ""}
     </div>
   );
 };
